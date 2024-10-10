@@ -120,6 +120,10 @@
       width: 3.5cap;
       margin-top: 10px;
     }
+
+    .body-section {
+        overflow-y: auto;
+    }
     
     .notice-section {
       display: flex;
@@ -332,7 +336,8 @@
     .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     
     .distribution-button-container {
-      border-radius: 20px;
+      position: fixed;
+      bottom: 0;
       outline: none;
       border: none;
       display: flex;
@@ -347,6 +352,7 @@
     
     .distribution-button-wrapper {
       display: flex;
+      border-radius: 1.5em;
       width: 90%;
       flex-direction: column;
       overflow: hidden;
@@ -355,7 +361,7 @@
     }
     
     .distribution-button {
-      border-radius: 20px;
+      border-radius: 1.5em;
       background-color: #0046ff;
       color: white;
       border: none;
@@ -400,55 +406,58 @@
             </div>
           </div>
         </header>
-        <div class="notice-section">
-          <div class="notice-content">
-            <div class="notice-text-container">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/26c5ef9af06c2eb28533ea2eed38e5aa6dbed9e8b4f1b25d3714daadf6ffe313?placeholderIfAbsent=true&apiKey=994db93738ab465081ae04350cc71d8e" alt="" class="notice-icon" />
-              <p class="notice-text">
-                상속인 등록을 위해 <strong>상속인의 이름, 주소, 생년월일</strong>이 필요합니다. 상속인이 여러 명인 경우 '<span style="color: #0046ff">+</span>' 버튼을 눌러 추가해 주세요. 미기재 시, 추후 유언장의 효력을 위해 반드시 추가해 주시기 바랍니다.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="inheritance-form">
-          <div class="form-content">
-            <div class="form-header">
-              <h2 class="form-title">상속인/후견인</h2>
-              <button type="button" class="add-button" aria-label="Add Inheritor">+</button>
-            </div>
-            <p class="inheritor-name">김은행</p>
-            <div class="inheritor-details">
-              <span class="inheritor-birthdate">2002.09.25</span>
-              <address class="inheritor-address">신한시 신한로 31 101동 101호</address>
-            </div>
-            <hr class="form-divider" />
-            <form class="add-form">
-                <div class="name-birth-container">
-                  <div class="input-group">
-                    <label for="name-input" class="input-label">성명</label>
-                    <div class="input-field">
-                      <input type="text" id="name-input" class="input-value" value="홍길동" aria-label="성명" />
-                    </div>
-                  </div>
-                  <div class="input-group">
-                    <label for="birth-input" class="input-label">생년월일</label>
-                    <div class="input-field">
-                      <input type="text" id="birth-input" class="input-value" value="1999.09.09" aria-label="생년월일" />
-                    </div>
-                  </div>
+        <div class="body-section">
+                <div class="notice-section">
+            <div class="notice-content">
+                <div class="notice-text-container">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/26c5ef9af06c2eb28533ea2eed38e5aa6dbed9e8b4f1b25d3714daadf6ffe313?placeholderIfAbsent=true&apiKey=994db93738ab465081ae04350cc71d8e" alt="" class="notice-icon" />
+                <p class="notice-text">
+                    상속인 등록을 위해 <strong>상속인의 이름, 주소, 생년월일</strong>이 필요합니다. 상속인이 여러 명인 경우 '<span style="color: #0046ff">+</span>' 버튼을 눌러 추가해 주세요. 미기재 시, 추후 유언장의 효력을 위해 반드시 추가해 주시기 바랍니다.
+                </p>
                 </div>
-                <div class="address-container">
-                  <label for="address-search" class="address-label">주소지</label>
-                  <div class="address-search">
-                    <input type="text" id="address-search" placeholder="도로명 주소찾기" aria-label="도로명 주소찾기" />
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e8289f133732cfad686ee034b00bf44ac9ce3213ba5d3ffe7312795cc83bd97c?placeholderIfAbsent=true&apiKey=994db93738ab465081ae04350cc71d8e" alt="" class="search-icon" />
-                  </div>
-                  <input type="text" class="address-detail" placeholder="상세 주소" aria-label="상세 주소" />
+            </div>
+            </div>
+            <div class="inheritance-form">
+            <div class="form-content">
+                <div class="form-header">
+                <h2 class="form-title">상속인/후견인</h2>
+                <button type="button" class="add-button" aria-label="Add Inheritor">+</button>
                 </div>
-                <button type="submit" class="submit-button">추가</button>
-              </form>
-          </div>
+                <p class="inheritor-name">김은행</p>
+                <div class="inheritor-details">
+                <span class="inheritor-birthdate">2002.09.25</span>
+                <address class="inheritor-address">신한시 신한로 31 101동 101호</address>
+                </div>
+                <hr class="form-divider" />
+                <form class="add-form">
+                    <div class="name-birth-container">
+                    <div class="input-group">
+                        <label for="name-input" class="input-label">성명</label>
+                        <div class="input-field">
+                        <input type="text" id="name-input" class="input-value" value="홍길동" aria-label="성명" />
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="birth-input" class="input-label">생년월일</label>
+                        <div class="input-field">
+                        <input type="text" id="birth-input" class="input-value" value="1999.09.09" aria-label="생년월일" />
+                        </div>
+                    </div>
+                    </div>
+                    <div class="address-container">
+                    <label for="address-search" class="address-label">주소지</label>
+                    <div class="address-search">
+                        <input type="text" id="address-search" placeholder="도로명 주소찾기" aria-label="도로명 주소찾기" />
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e8289f133732cfad686ee034b00bf44ac9ce3213ba5d3ffe7312795cc83bd97c?placeholderIfAbsent=true&apiKey=994db93738ab465081ae04350cc71d8e" alt="" class="search-icon" />
+                    </div>
+                    <input type="text" class="address-detail" placeholder="상세 주소" aria-label="상세 주소" />
+                    </div>
+                    <button type="submit" class="submit-button">추가</button>
+                </form>
+            </div>
+            </div>
         </div>
+        
         <div class="distribution-button-container">
             <div class="distribution-button-wrapper">
               <button class="distribution-button">AI와 유산 분배하러 가기</button>
